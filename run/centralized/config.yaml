@@ -1,0 +1,34 @@
+data_config:
+  dataset_name: glue
+#  dataset_name: ner
+
+federated_config:
+  clients_num: 100
+  rounds: 100
+  alpha: 1.0
+  sample: 0.1
+  rank: -1
+  pson: true
+
+model_config:
+  model_type: roberta
+  model_output_mode: seq_classification
+#  model_output_mode: token_classification
+  permutation_layers: false
+  client_model_layers: [0,1,2]
+  server_model_layers: [0,1,2]
+  tuning_type:
+#  tuning_type: adapter_roberta-base
+#  tuning_type: soft_prompt_roberta-base
+#  tuning_type: lora_roberta-base
+#  tuning_type: bitfit_robert-base
+#  tuning_type: prefix_robert-base
+
+training_config:
+  per_device_train_batch_size: 32
+  num_train_epochs: 10
+#  learning_rate: 5e-5
+  learning_rate: 2e-5
+  metric_name: glue
+#  metric_name: conll
+  do_predict: true

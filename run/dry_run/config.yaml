@@ -1,0 +1,25 @@
+data_config:
+  dataset_name: glue
+  task_name: qqp
+
+federated_config:
+  clients_num: 100
+  rounds: 100
+  alpha: 1.0
+  sample: 0.1
+  rank: -1
+  pson: true
+
+model_config:
+  model_type: bert
+  model_output_mode: seq_classification
+  permutation_layers: false
+  client_model_layers: [0,1,2]
+  server_model_layers: [0,1,2]
+
+training_config:
+  per_device_train_batch_size: 32
+  num_train_epochs: 5000
+  learning_rate: 5e-5
+  metric_name: glue
+  do_predict: true

@@ -1,0 +1,14 @@
+numpy
+pandas
+wandb
+gpustat
+loguru
+matplotlib
+omegaconf
+scikit-learn
+tensorboardX
+transformers
+seqeval
+thop
+seaborn
+opendelta==0.2.4
